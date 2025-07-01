@@ -1,0 +1,20 @@
+CREATE TABLE `liquidaciones` (
+  `liq_id` int NOT NULL AUTO_INCREMENT,
+  `ces_id` int DEFAULT NULL,
+  `liq_estado` int DEFAULT NULL,
+  `liq_fecha` date DEFAULT NULL,
+  `liq_fecha_creacion` datetime DEFAULT NULL COMMENT 'fecha que se creo la pre liquidacion',
+  `liq_usuario_creacion` varchar(45) DEFAULT NULL COMMENT 'usuario que creo la pre liquidacion',
+  `liq_fecha_aprobacion` datetime DEFAULT NULL COMMENT 'fecha que se aprobo la pre liquidacion',
+  `liq_usuario_aprobacion` varchar(45) DEFAULT NULL COMMENT 'usuario que aprobo la preliquidacion ',
+  `liq_fecha_liquidacion` datetime DEFAULT NULL COMMENT 'fecha que se aprobo liquidacion',
+  `liq_usuario_liquidacion` varchar(45) DEFAULT NULL COMMENT 'usuario que aprobo la liquidacion',
+  `liq_usuario_rechazo` varchar(45) DEFAULT NULL,
+  `liq_fecha_rechazo` datetime DEFAULT NULL,
+  `liq_numero_factura` varchar(45) DEFAULT NULL COMMENT 'numero de factura que ingresa le centro de servicio en la aplicacion form_preliquidaciones ',
+  `ltr_id` int DEFAULT NULL COMMENT 'indica el tipo de rechazo de la liquidacion',
+  `ltr_motivo` varchar(500) DEFAULT NULL COMMENT 'indica el motivo por el que se rechaza la liquidacion',
+  `liq_fecha_pago` datetime DEFAULT NULL COMMENT 'fecha que se pago la liquidacion',
+  `liq_usuario_pago` varchar(45) DEFAULT NULL COMMENT 'usuario que pago la liquidacion',
+  PRIMARY KEY (`liq_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
